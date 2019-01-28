@@ -37,7 +37,7 @@ void anzahl(char * dateipfad){
   } else {
     //Solange nicht das Ende des Files (=EOF) erreicht wird, wird gelesen
     while ((temp = fgetc(fp))!=EOF) {
-      printf("gelsen: %c\n", temp);
+      printf("gelesen: %c\n", temp);
       //Wir zählen die Leerzeichen, um auf die ANzahl der Wörter zu kommen
       if(temp == ' '){
         zaehler++;
