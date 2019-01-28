@@ -1,0 +1,44 @@
+Sysprak-Prüfung: Gedächtnisprotokoll:
+1) Gegeben ist eine Datei "./fileIO.conf" mit Inhalt der Form:
+<key> = <value>
+sowie beliebig vielen Leerzeichen, leeren Zeilen, Zeilen mit Leerzeichen.
+ <key> kann den Wert "a" oder "b" haben, <value> ist immer ein int-Wert. 
+ Schreiben Sie eine Methode, die die Datei ausliest und die int-Werte in die Pointer
+ int *a und int *b (als Parameter übergeben) schreibt.
+2 Punkte - einen für a richtig, einen für b richtig
+ 
+2) Gegeben ist ein Array int* zahlen mit anz Zahlen drin. Schreiben Sie einen Methode, die
+mit diesen Parametern das Minimum der Zahlen im Array errechnet und zurückgibt.
+1 Punkt
+
+3) Gegeben sind ein Filedescriptor fd* und ein (\0- terminierter) String char* buffer.
+ Schreiben Sie eine Methode die eine pipe anlegt und buffer in die pipe schreibt und
+ die Anzahl der gesendeten Zeichen zurückgibt.
+1 Punkt (überprüft u.A., ob die richtige Anzahl Zeichen über die Pipe gesendet wurde)
+ 
+4) Gegeben sind eine IP-Adresse "12. ... . ." sowie ein Parameter int port für einen TCP-Port des Servers 
+(bzw. hostname "12. ... . :<port>" ?).
+Schreiben Sie eine Methode, die Verbindung zu dem Server aufbaut und einen
+Socket (int) zurückgibt bei Erfolg, sonst -1. 
+Schreiben Sie eine zweite Methode (mit Parameter int sock), 
+die einen (\0-terminierten ?) String der Länge BUF = 256 vom Server empfängt,
+diesen sofort wieder zurückschickt und die Verbindung schließt.
+2 Punkte - einen für Verbindungsaufbau (erste Methode) 
+und einen für den String richtig hin und her gesendet (2. Methode)
+
+
+
+Umgebung:
+- Vorgebeben sind generell: ein Headerfile mit Aufgabenstellung und Methoden-Signatur, ein c-File
+zum reinschreiben (nur da rein), eine main.c sowie eine makefile (und ggf. .conf-file) zum Testen
+- Editoren & Entwicklungsumgebungen (Colorblocks?), Terminal, (Filemanager, dessen Ordnernamen
+man einfach kopieren kann), ein Web-Browser, in dem man nur eine Seite sehen kann: hier kann man
+jeweils mit einem Mausklick bei einer Aufgabe prüfen, wie viele Punkte man bekommt mit jeweils 
+einer Zeile Feedback dazu, warum man sie bekommt / warum (noch) nicht. Man kann so oft prüfen, wie man
+will; (hier wird auch mit anderen Beispielzahlen als in den mains getestet)
+-> Punkte gibt es nur, wenn das "Programm"" (Aufgabe) läuft
+(- kein C99 -> keine for-Schleifen möglich?)
+-> Umgebung mit 2 (einfacheren) Übungsaufgaben (allerdings ohne Web-Browser) kann man schon ein paar Tage
+vorher an bestimmten PCs im CIP-Pool ausprobieren
+- 2,5 h Zeit, dann gehen die PCs aus (mit Ankündigung "noch 1 min"), es zählt, was als letztes
+gespeichert wurde
