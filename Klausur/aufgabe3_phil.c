@@ -33,7 +33,6 @@ int anz_in_pipe(int *fd,char *buffer){
 
     if(pp == -1){perror("Creating pipe did not work");return 0;}
 
-  //  close(fd[0]);
     write(fd[1], buffer, strlen(buffer));
 
     return strlen(buffer);
