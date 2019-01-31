@@ -1,0 +1,32 @@
+Now you can see three files:
+1. processOne.c
+2. processTwo.c
+3. shmDelete.c
+
+At first call processOne
+gcc -o One processOne.c
+./One
+
+Open another console and run "ipcs"
+Now u should see anything in the shared Memory section
+
+This opens the sharedMemory and writes the alphabet in it.
+The sharedMemory is still open even the process closed.
+
+Thats what we want to proof with processTwo
+gcc -o One processTwo.c
+./Two
+
+This process reads the letters we wrote into the SHM with processOne
+The process is closing and is detaching the SHM at the end.
+
+Now we need to delete it because its still existing what u can proof with "ipcs"
+Run the shmDelete.c
+gcc -o delete shmDelete.c
+./delete
+
+Run ipcs again and you see.
+NOTHING
+TADAAAA!
+
+Nice work ;) Thumb up
