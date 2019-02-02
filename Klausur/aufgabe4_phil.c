@@ -57,13 +57,12 @@ int getconnection(char* get_inet_addr, int get_port){
 
 void recvsend(int sock){
 
-  int n;
   char buffer[1024];
 
-  n = recv(sock, buffer, 1024, 0);
+  recv(sock, buffer, strlen(buffer), 0);
   printf("[+]Data Recv: %s\n", buffer);
   strcat(buffer, " Darling");
-  printf("[+]Data Recv: %s\n", buffer);
-  n = send(sock, buffer, 1024, 0);
+  printf("[+]Data Sending: %s\n", buffer);
+  send(sock, buffer, strlen(buffer), 0);
 
 }

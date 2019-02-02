@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]) {
   if (shmID > -1){
       shmPtr = shmat(shmID, 0 , 0);
 
-      if (shmPtr == (char*)-1) {
+      if (shmPtr == "-1") {
                 perror("shmat went wrong");
               } else {
                 while (i < MEMORYVALUE)

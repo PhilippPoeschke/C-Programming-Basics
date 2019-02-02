@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 
 #define PORT 4444
 
@@ -31,6 +32,8 @@ int main(){
 	recv(clientSocket, buffer, 1024, 0);
 	printf("[+]Data Recv: %s\n", buffer);
 	printf("[+]Closing the connection.\n");
+
+	close(clientSocket);
 
   return 0;
 }
