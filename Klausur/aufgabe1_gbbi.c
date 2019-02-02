@@ -58,7 +58,8 @@ int main(void){
     printf("%d ",b[i]);
   }
 
-
+  free(a);
+  free(b);
   fclose(fp);
   return 0;
 }

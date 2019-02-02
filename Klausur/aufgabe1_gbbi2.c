@@ -71,6 +71,8 @@ int main(void){
     printf("%d ",b[y]);
   }
 
-
+  free(a);
+  free(b);
+  flose(fp);
 
 }
