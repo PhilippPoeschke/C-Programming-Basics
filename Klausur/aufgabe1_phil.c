@@ -18,10 +18,12 @@ int main()
   char b[] = "b";
   char zahlen[] = "1234567890";
 
-  int eins[256];
+  int *eins;
+  eins = malloc(sizeof(int));
   int countereins = 0;
   int i = 0;
-  int zwei[256];
+  int *zwei;
+  zwei = malloc(sizeof(int));
   int counterzwei = 0;
   int j = 0;
 
@@ -33,14 +35,16 @@ int main()
       countereins = atoi(endzahl = strpbrk(line, zahlen));
       eins[i] = countereins;
       i++;
-      printf("%s = %d\n", zeichen, countereins);
+      if(realloc(eins, sizeof(int)*(i+1))!=NULL){
+      printf("%s = %d\n", zeichen, countereins);}
     }
     else if(b == (zeichen = strpbrk(b, line)))
     {
       counterzwei = atoi(endzahl = strpbrk(line, zahlen));
       zwei[j] = counterzwei;
       j++;
-      printf("%s = %d\n", zeichen, counterzwei);
+      if(realloc(zwei, sizeof(int)*(j+1))!=NULL){
+      printf("%s = %d\n", zeichen, counterzwei);}
     }
   }
 
@@ -53,6 +57,9 @@ for (int y = 0; y < j; y++) {
   printf("%d ",zwei[y]);
 }
 printf("\n" );
+
+free(eins);
+free(zwei);
 
   return 0;
 }
